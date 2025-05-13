@@ -7,38 +7,48 @@
     --paragraph-color: #959595;
     --button-color: #9D9D9D;
   
-    /* 📐 Boyutlar */
-    --font-size-sm: 18px;
-    --font-size-md: 20px;
-    --font-size-lg: 36px;
-    --font-size-lg: 54px;
-    --container-padding: 20px;
-    --border-radius: 8px;
+    /* 📐 Boyutlar & Fontlar (Yeniden Düzenlendi) */
+    --font-label: 16px;       
+    --font-p: 18px;          
+    --font-h3: 20px;          
+    --font-h2: 32px;         
+    --font-h1: 54px;          
+    --font-icon-lg: 48px;    /* Yeni: Büyük bx ikonları için */
+
+    /* �� Konteyner & Boşluklar */
     --container-width: 1240px;
+    --container-padding: var(--spacing-md);
+    --border-radius: 8px;
+
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --spacing-xl: 90px;
   }
  html {
     scroll-behavior: smooth;
   }
 p{
-    font-size: var(--font-size-sm);
+    font-size: var(--font-p);
     color: var(--paragraph-color);
     font-family: 'Manrope', sans-serif;
-    margin: 0;
+    margin: 0 0 10px 0;
 }
 h1{
-    font-size: var(--font-size-lg);
+    font-size: var(--font-h1);
     color: var(--text-color);
     font-family: 'Manrope', sans-serif;
-    margin: 0;
+    margin: 0 0 15px 0;
 }
 h2{
-    font-size: var(--font-size-md);
+    font-size: var(--font-h2);
     color: var(--text-color);
     font-family: 'Manrope', sans-serif;
     margin: 0;
 }
 a{
-    font-size: var(--font-size-sm);
+    font-size: var(--font-label);
     color: var(--button-color);
     text-decoration: none;
     cursor: pointer;
@@ -68,7 +78,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: var(--spacing-sm) var(--spacing-md);
 }
 .logo{
     width: 29px;
@@ -89,7 +99,7 @@ nav ul{
     align-items: center;
 }
 nav ul li{
-    margin-right: 20px;
+    margin-right: var(--spacing-md);
     a:hover{
         color: var(--text-color);
     }
@@ -99,7 +109,7 @@ nav ul li{
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
+    margin-top: var(--spacing-xl);
     .hero-img{
         display: flex;
         justify-content: center;
@@ -119,9 +129,23 @@ nav ul li{
 .hero-content{
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     width: 500px;
 }
+
+/* Global style for hero image */
+.hero-img {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img img {
+    border-radius: 50%;
+    width: 420px;
+    height: 420px;
+    object-fit: cover; 
+}
+
 .hero-button{
     display: flex;
 }
@@ -130,12 +154,12 @@ nav ul li{
     background-color: var(--background-color);
     border: 1px solid var(--text-color);
     border-radius: var(--border-radius);
-    padding: 10px 20px;
+    padding: var(--spacing-sm) var(--spacing-md);
     cursor: pointer;
     justify-content: center;
     align-items: center;
     i{
-            margin-right: 10px;
+            margin-right: var(--spacing-xs);
             text-align: center;
             justify-content: center;
             align-items: center;
@@ -157,14 +181,14 @@ nav ul li{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin-top: 30px;
+    gap: var(--spacing-md);
+    margin-top: calc(var(--spacing-md) + var(--spacing-sm));
 }
 
 .gallery-left-img, .gallery-right-img {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--spacing-md);
 }
 
 .gallery-left-img img, .gallery-right-img img {
@@ -174,8 +198,8 @@ nav ul li{
 }
 
 .gallery-text {
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: calc(var(--spacing-lg) + var(--spacing-sm));
+    margin-bottom: var(--spacing-md);
 }
 .gallery-right-img img{
     width: 100%;
@@ -183,14 +207,14 @@ nav ul li{
     object-fit: cover;
 }
 .gallery-left-img{
-    margin-bottom: 200px;
+    margin-bottom: calc(var(--spacing-xl) * 2 + var(--spacing-lg));
 }
 .visual-exp{
     width: var(--container-width);
     margin: 0 auto;
     justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
+    margin-top: var(--spacing-xl);
 }
 .visual-exp-text{
     text-align: center;
@@ -199,13 +223,13 @@ nav ul li{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-md);
 }
 .visual-exp-img-bottom{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 100px;
+    margin-bottom: var(--spacing-xl);
 }
 .personal-profile{
     width: var(--container-width);
@@ -226,8 +250,8 @@ nav ul li{
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
-    margin-top: 100px;
+    margin-bottom: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
 }
 .contact-me-text{
     text-align: center;
@@ -241,12 +265,12 @@ nav ul li{
     background-color: var(--background-color);
     border: 1px solid var(--text-color);
     border-radius: var(--border-radius);
-    padding: 10px 20px;
+    padding: var(--spacing-sm) var(--spacing-md);
     cursor: pointer;
     justify-content: center;
     align-items: center;
     i{
-            margin-right: 10px;
+            margin-right: var(--spacing-sm);
             text-align: center;
             justify-content: center;
             align-items: center;
@@ -269,7 +293,7 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: var(--spacing-md) 0;
 }
 .footer-content{
     text-align: center;
@@ -280,13 +304,31 @@ footer{
     align-items: center;
 }
 .footer-links a{
-    margin-right: 40px;
+    margin-right: var(--spacing-lg);
 }
 .footer-links a:hover{
     color: var(--text-color);
 }
 
+/* Footer Icon Styles */
+.footer-links a i {
+    font-size: 1.5em; /* Adjusted icon size, can be tweaked further */
+    color: var(--button-color); /* Initial color from existing 'a' styles */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.footer-links a:hover i {
+    color: var(--text-color); /* Change to text-color on hover */
+}
+
 /* work kısmı */
+
+.work-header {
+  background-color: rgba(50, 50, 50, 0.7); /* #323232 with 70% opacity */
+  backdrop-filter: blur(8px); /* Standard blur effect */
+  -webkit-backdrop-filter: blur(8px); /* Blur effect for Safari */
+  /* position: fixed, z-index, etc., are inherited from the general header style */
+}
 
 .covibe-container{
     width: var(--container-width);
@@ -298,8 +340,8 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: calc(var(--spacing-lg) + var(--spacing-sm));
+    margin-bottom: calc(var(--spacing-lg) + var(--spacing-sm));
 }
 .covibe-content-image{
     display: flex;
@@ -317,28 +359,28 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: var(--spacing-md);
 }
 .bx{
     color: var(--text-color);
-    font-size: 48px;
+    font-size: var(--font-icon-lg);
 }
 .covibe-content-h1{
     color: var(--text-color);
-    font-size: 32px;
+    font-size: var(--font-h2);
 }
 .covibe-content-title{
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: calc(var(--spacing-lg) + var(--spacing-sm));
     p{
         color: var(--paragraph-color);
-        font-size: 18px;
+        font-size: var(--font-p);
         margin-bottom: 0;
     }
     h1{
         color: var(--text-color);
-        font-size: 32px;
+        font-size: var(--font-h2);
         margin-top: 0;
     }
 }
@@ -347,15 +389,15 @@ footer{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    margin-bottom: 100px;
+    margin-bottom: var(--spacing-xl);
     p{
         color: var(--paragraph-color);
-        font-size: 18px;
+        font-size: var(--font-p);
         margin-bottom: 0;
     }
     h1{
         color: var(--text-color);
-        font-size: 32px;
+        font-size: var(--font-h2);
         margin-top: 0;
     }
 }
@@ -369,13 +411,13 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: var(--spacing-md);
 }
 
 .launch-container-title p {
-    margin-bottom: 5px;
+    margin-bottom: var(--spacing-xs);
     color: var(--paragraph-color);
-    font-size: 18px;
+    font-size: var(--font-p);
 }
 
 .launch-container-title-hr{
@@ -393,14 +435,414 @@ footer{
     align-items: center;
     width: 100%;
     margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 100px;
+    margin-top: calc(var(--spacing-lg) + var(--spacing-sm));
+    margin-bottom: var(--spacing-xl);
 }
 .launch-container-content-img{
     width: 1240px;
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* Solution Component Styles */
+.solution-container {
+  width: var(--container-width);
+  margin: var(--spacing-xl) auto;
+  display: flex;
+  align-items: center;
+  gap: 130px;
+}
+
+.solution-image {
+  flex: 1;
+}
+
+.solution-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+.solution-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.solution-label {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: var(--font-label);
+  line-height: 1em;
+  letter-spacing: 12.5%;
+  text-transform: uppercase;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.solution-heading {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: var(--font-h2);
+  line-height: 1.6875em;
+  letter-spacing: -1.5625%;
+  color: #FFFFFF;
+  max-width: 500px;
+}
+
+.solution-container-reversed {
+  flex-direction: row-reverse;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1280px) {
+  :root {
+    --container-width: 92%;
+    --font-h1: 48px;
+    --font-h2: 28px;
+    --font-p: 17px;
+    --font-label: 15px;
+
+    --spacing-xl: 90px;
+    --spacing-lg: 35px;
+    --spacing-md: 18px;
+    --spacing-sm: 9px;
+  }
+
+  .solution-container {
+    gap: var(--spacing-xl);
+  }
+
+  .visual-exp-img-top,
+  .visual-exp-img-bottom,
+  .personal-profile-content {
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .visual-exp-img-top img,
+  .visual-exp-img-bottom img,
+  .personal-profile-content img {
+    max-width: 30%;
+    height: auto;
+    flex-grow: 0;
+    flex-shrink: 1;
+  }
+
+  .hero-container {
+    gap: var(--spacing-md);
+    align-items: center;
+  }
+
+  .hero-content {
+    width: auto;
+    flex: 1 1 55%;
+    min-width: 0;
+  }
+
+  .hero-img {
+    flex: 1 1 40%;
+    max-width: 380px;
+  }
+  
+  .hero-img img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .solution-container {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+  .solution-container-reversed {
+    flex-direction: column;
+  }
+  
+  .solution-heading {
+    font-size: calc(var(--font-h2) - 4px);
+  }
+}
+
+/* Updated Button Styles for index.html */
+.hero-button button,
+.contact-button-container .contact-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #868686;
+    border: 1px solid #868686;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-sm) var(--spacing-md);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.hero-button button a,
+.contact-button-container .contact-button a {
+    color: #FFFFFF;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.hero-button button a i,
+.contact-button-container .contact-button a i {
+    color: #FFFFFF;
+    font-size: 1.2em;
+    margin-right: var(--spacing-xs);
+    vertical-align: middle;
+}
+
+.hero-button button:hover,
+.contact-button-container .contact-button:hover {
+    background-color: #757575;
+    border-color: #757575;
+}
+
+/* Ensure text and icon stay white on button hover */
+.hero-button button:hover a,
+.contact-button-container .contact-button:hover a,
+.hero-button button:hover a i,
+.contact-button-container .contact-button:hover a i {
+    color: #FFFFFF;
+}
+
+/* Styles for the full-width hero banner in work.html */
+.work-hero-banner {
+    width: 100%;
+    line-height: 0;
+}
+
+.work-hero-banner img {
+    width: 100%;
+    height: auto;
+    max-height: 75vh;
+    object-fit: cover;
+    display: block;
+}
+
+.work-header {
+  background-color: rgba(50, 50, 50, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Conclusion Section Styles */
+.conclusion-container {
+  width: var(--container-width);
+  margin: var(--spacing-xl) auto;
+  padding: 0 var(--container-padding);
+  box-sizing: border-box;
+}
+
+.conclusion-title {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: var(--font-label);
+  line-height: 1em;
+  letter-spacing: 0.1em; 
+  text-transform: uppercase;
+  color: var(--paragraph-color); 
+  margin-bottom: var(--spacing-sm);
+}
+
+.conclusion-text {
+  font-size: var(--font-p);
+  color: var(--text-color);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+}
+
+.conclusion-image {
+  width: 100%;
+}
+
+.conclusion-image img {
+  width: 100%;
+  max-width: var(--container-width); 
+  height: auto;
+  border-radius: var(--border-radius);
+  display: block;
+  margin: 0 auto; 
+}
+
+/* ========================================================================= */
+/* ======================= RESPONSIVE STYLES ======================= */
+/* ========================================================================= */
+
+/* Tablets (Portrait and Landscape) (481px - 768px) */
+@media (max-width: 768px) {
+  :root {
+    --container-width: 90%;
+    --font-h1: 36px;
+    --font-h2: 24px;
+    --font-p: 16px;
+    --font-label: 14px;
+    --font-icon-lg: 40px;
+
+    --spacing-xl: 100px;
+    --spacing-lg: 30px;
+    --spacing-md: 15px;
+    --spacing-sm: 8px;
+    --spacing-xs: 4px;
+  }
+
+  body {
+    font-size: var(--font-p);
+  }
+
+  .header-container nav ul {
+  }
+
+  .hero-container {
+    flex-direction: column-reverse;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .hero-content {
+    width: 100%;
+  }
+  
+  .hero-button {
+      justify-content: center;
+  }
+
+  .gallery-container {
+    flex-direction: column;
+  }
+
+  .visual-exp-img-top,
+  .visual-exp-img-bottom,
+  .personal-profile-content {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+  }
+
+  .visual-exp-img-top img,
+  .visual-exp-img-bottom img,
+  .personal-profile-content img {
+    max-width: 80%;
+    width: 100%;
+    height: auto;
+  }
+
+  .gallery-left-img {
+    margin-bottom: 0;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  .solution-container {
+    flex-direction: column !important;
+    gap: var(--spacing-lg) !important;
+  }
+
+  .solution-heading {
+    font-size: calc(var(--font-h2) - 2px);
+  }
+  
+  .solution-container-reversed {
+      flex-direction: column !important; 
+  }
+
+  .covibe-content {
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      gap: var(--spacing-lg); 
+      justify-items: center; 
+  }
+
+  .covibe-content-item {
+      width: 100%; 
+      max-width: 200px; 
+      display: flex;
+      flex-direction: column; 
+      align-items: center;
+      text-align: center;
+      gap: var(--spacing-sm);
+  }
+
+  .launch-container-title-hr {
+      align-self: center;
+  }
+}
+
+/* Mobile Devices (<= 480px) */
+@media (max-width: 480px) {
+  :root {
+    --container-width: 95%;
+    --font-h1: 28px;
+    --font-h2: 20px;
+    --font-p: 15px;
+    --font-label: 13px;
+    --font-icon-lg: 36px;
+
+    --spacing-xl: 50px;
+    --spacing-lg: 25px;
+    --spacing-md: 12px;
+    --spacing-sm: 7px;
+    --spacing-xs: 3px;
+  }
+  
+  .header-container{
+      padding: var(--spacing-sm) var(--spacing-sm);
+  }
+
+  .logo img {
+      transform: scale(0.85);
+  }
+  
+  .hero-button button,
+  .contact-button-container .contact-button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-label);
+  }
+  
+  .hero-button button a i,
+  .contact-button-container .contact-button a i {
+    font-size: 1.1em;
+  }
+
+  .solution-container {
+    margin: var(--spacing-lg) auto;
+  }
+  
+  .conclusion-container {
+      margin: var(--spacing-lg) auto;
+  }
+  
+  .footer-links a {
+      margin-right: var(--spacing-md);
+  }
+}
+
+/* Added Global style for hero image, assuming it might be missing or incomplete */
+.hero-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img img {
+    border-radius: 50%;
+    width: 420px;
+    height: 420px;
+    object-fit: cover;
 }
 
 
