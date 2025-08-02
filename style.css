@@ -28,6 +28,7 @@
   }
  html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Add padding to account for fixed header */
   }
 p{
     font-size: var(--font-p);
